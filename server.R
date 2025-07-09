@@ -56,6 +56,14 @@ server <- function(input, output, session) {
            col = input$color,
            border = "white")
     }
+    else if(input$dataset == "iris") {
+    hist(data[[input$variable]], 
+           breaks = input$bins,
+           main = paste("Distribution of", input$variable),
+           xlab = input$variable,
+           col = input$color,
+           border = "white") 
+  }
     # MISSING: iris dataset case - this causes the crash!
     # Students need to add the iris case or make it generic
   })
@@ -63,11 +71,11 @@ server <- function(input, output, session) {
   # MISSING FEATURE: Summary statistics output
   # Task 2: Students need to add this in both ui.R and server.R
   # 
-  # output$summary <- renderPrint({
-  #   req(input$variable)
-  #   data <- selected_data()
-  #   summary(data[[input$variable]])
-  # })
+   output$summary <- renderPrint({
+     req(input$variable)
+     data <- selected_data()
+     summary(data[[input$variable]])
+   })
   
   # Dataset information
   output$dataset_info <- renderPrint({

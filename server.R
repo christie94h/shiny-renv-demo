@@ -56,6 +56,14 @@ server <- function(input, output, session) {
            col = input$color,
            border = "white")
     }
+    else if(input$dataset == "iris") {
+      hist(data[[input$variable]], 
+           breaks = input$bins,
+           main = paste("Distribution of", input$variable),
+           xlab = input$variable,
+           col = input$color,
+           border = "white")
+    }
     # MISSING: iris dataset case - this causes the crash!
     # Students need to add the iris case or make it generic
   })

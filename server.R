@@ -77,6 +77,8 @@ server <- function(input, output, session) {
      summary(data[[input$variable]])
    })
   
+
+  #hiiiiiiiii cats cats cats
   # Dataset information
   output$dataset_info <- renderPrint({
     data <- selected_data()

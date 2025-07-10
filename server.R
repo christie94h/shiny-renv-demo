@@ -71,12 +71,14 @@ server <- function(input, output, session) {
   # MISSING FEATURE: Summary statistics output
   # Task 2: Students need to add this in both ui.R and server.R
   # 
-  # output$summary <- renderPrint({
-  #   req(input$variable)
-  #   data <- selected_data()
-  #   summary(data[[input$variable]])
-  # })
+  output$summary <- renderPrint({
+     req(input$variable)
+     data <- selected_data()
+     summary(data[[input$variable]])
+   })
   
+
+  #hiiiiiiiii cats cats cats
   # Dataset information
   output$dataset_info <- renderPrint({
     data <- selected_data()
